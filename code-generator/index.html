@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+        />
+        <link rel="shortcut icon" href="public/vite.svg" type="image/x-icon">
+        <title>Code Generator</title>
+    </head>
+
+    <body>
+        <!-- Conteúdo Principal  -->
+        <main>
+            <!-- Secção do Gerador de Código -->
+            <section class="gerador-codigo">
+                <!-- Título da Secção -->
+                <h1>Gerador de Código <span>com IA</span></h1>
+                <p>Descreva o que deseja que a IA ajudará!</p>
+
+                <!-- Aréa de Descrição do Código -->
+                <form id="form-descricao" method="POST">
+                    <textarea
+                        name="area-descricao"
+                        id="area-descricao"
+                        rows="5"
+                        placeholder="Ex.: crie uma esfera azul que expande ao clicar nela..."
+                        aria-label="Área de descrição do código"
+                    ></textarea>
+                    <button class="btn-gerar" type="submit">
+                        <i class="bi bi-openai"></i>
+                        Gerar Código
+                    </button>
+                </form>
+            </section>
+
+            <!-- Secção da Resposta Gerada pela IA -->
+            <section class="resposta-gerada ocultar">
+                <!-- Exibir o Código -->
+                <div class="painel-codigo">
+                    <div class="cabecalho-codigo">
+                        <h2>Código</h2>
+                        <button id="copiar" class="btn-copiar" type="button">
+                            <i class="bi bi-copy"></i>
+                        </button>
+                    </div>
+
+                    <pre id="area-codigo" class="codigo"></pre>
+                </div>
+
+                <!-- Área para a Renderização -->
+                <div class="painel-renderizacao">
+                    <h2>Renderização</h2>
+                    <iframe
+                        id="area-renderizacao"
+                        class="renderizacao"
+                        title="Pré-visualização do código gerado"
+                    ></iframe>
+                </div>
+            </section>
+        </main>
+    </body>
+
+    <script type="module" src="/src/main.js"></script>
+</html>
